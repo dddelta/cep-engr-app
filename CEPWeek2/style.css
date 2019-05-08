@@ -1,0 +1,75 @@
+/* GLOBAL STYLES */
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+body{
+  font-family: 'Montserrat', sans-serif;
+  box-sizing: border-box;
+}
+
+/* GRID - CSS Grid Container*/
+.container {
+  display: grid;
+  grid-template-columns: 1fr 3fr 3fr 1fr; /* Trying with 4 columns */
+  grid-template-rows: .1fr 1.8fr 3fr; /* Trying the first 3 rows before I do the whole page. */
+  grid-template-areas:
+      "header header header header"
+      "hero hero hero hero"
+      "courses courses courses courses__book--free";
+  grid-gap: 20px;
+  align-items: stretch;
+/* other styles */
+  background-color: white ;
+  font-size: 1.35em;
+}
+.header {
+  grid-area: header;
+  display: flex; /* flex the elements in header */
+  justify-content: space-between;
+  padding: 20px;
+  background-color: white;
+  align-items: center;
+  height:40px;
+}
+.info {
+  display: grid;
+  grid-area: header;
+  grid-column: col 3 / span 1;
+  grid-row: row 1;
+  grid-gap: 10px;
+  grid-template-columns: 1fr 1fr;
+}
+.hero {
+  display: grid;
+  grid-row: 2;
+  grid-area: hero;
+  background-image: url("../CEPWeek2/images/bg-image-01.jpg");
+  align-items: stretch;
+}
+.slogan {
+  display: flex;
+  flex-dispaly: flex-start;
+  color: white;
+}
+.slogan__quote {
+    font-size: 12px;
+}
+.slogan__slogan {
+  font-size: 30px;
+  font-weight: 900;
+}
+.main {
+  grid-area: main;
+}
+.courses {
+  grid-area: courses;
+  display: flex;
+  flex-wrap: wrap;
+}
+.box {
+  flex: 1 1 15em; /* grow, shrink and base */
+  padding: 10px;
+  margin: 10px;
+  background-color: #f06134;
+  border: 2px solid #e05023;
+}

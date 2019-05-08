@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <p>Click the button to play Rock, Paper, Scissors, with the computer.</p>
+
+    <select id = "userSelectDropdownHTML">
+      <option value="rock">rock</option>
+      <option value="paper" selected="selected">paper</option>
+      <option value="scissors">scissors</option>
+    </select>
+
+    <p id="computerOutput">Play!</p>
+    <p id="winner">Play!</p>
+
+    <button type="button" name="run_program" onclick="computerShootFxn">fight computer</button>
+
+    <script type="text/javascript">
+      var userSelectDropdown = document.getElementById("userSelectDropdownHTML");
+      var userSelectDropdownValue = userSelectDropdown.options[userSelectDropdown.selectedIndex].value;
+      console.log(userSelectDropdownValue);
+      function computerShootFxn(userSelectDropdownValue) {
+        var shoots = ["rock", "paper", "scissors"];
+        var computerShoot = "rock";
+        var compchoice = document.getElementById("computerOutput");
+        compchoice.innerHTML = shoots[Math.floor((Math.random() * 3))];
+        rpsCompare(compchoice, userSelectDropdownValue);
+      }
+      function rpsCompare(computerShoot, userSelectDropdown) {
+        var winner = "draw";
+        if (computerShoot === "rock" && userSelectDropdown === "paper") {
+            winner === "user";
+            console.log(computerShoot, userSelectDropdown);
+        } else if (computerShoot === "rock" && userSelectDropdown === "scissors"){
+            winner === "computer";
+            console.log(computerShoot, userSelectDropdown);
+        } else if (computerShoot === "paper" && userSelectDropdown === "scissors"){
+            winner === "user";
+            console.log(computerShoot, userSelectDropdown);
+        } else if (computerShoot === "paper" && userSelectDropdown === "rock"){
+            winner === "computer";
+            console.log(computerShoot, userSelectDropdown);
+        } else if (computerShoot === "scissors" && userSelectDropdown === "paper"){
+            winner === "computer";
+            console.log(computerShoot, userSelectDropdown);
+        } else if (computerShoot === "scissors" && userSelectDropdown === "rock"){
+            winner === "user";
+            console.log(computerShoot, userSelectDropdown);
+        } else {
+          winner === "draw";
+          console.log(computerShoot, userSelectDropdown);
+        }
+        var winnerOut = document.getElementById("winner");
+        winnerOut.innerHTML = winner;
+      }
+
+    </script>
+
+  </body>
+</html>
+Message Input
+
+Message Aaron Hellman
